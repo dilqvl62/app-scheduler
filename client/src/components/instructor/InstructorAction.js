@@ -3,7 +3,6 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import TabActionForm from '../TabActionForms';
 
-
 const InstructorAction = (props) => {
     const { addInstructor, deleteInstructor, selected, values, setters } = props;
     const { setFirstName, setLastName, setMinNum, setMaxNum } = setters;
