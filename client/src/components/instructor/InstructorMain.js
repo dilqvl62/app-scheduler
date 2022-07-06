@@ -11,17 +11,17 @@ const InstructorMain = () => {
     const [lastName, setLastName] = useState('')
     const [minNum, setMinNum] = useState('')
     const [maxNum, setMaxNum] = useState('')
-    const [selected, setSelected] = useState('')
+    const [selected, setSelected] = useState('');
 
     const setters = { setFirstName, setLastName, setMinNum, setMaxNum };
     const values = { firstName, lastName, minNum, maxNum };
 
     const columns = [
-        { field: 'instructor_id', headName: 'ID', flex: 1 },
-        { field: 'instructor_name_first', headName: 'Instructor First Name', flex: 1 },
-        { field: 'instructor_name_last', headName: 'Instructor Last Name', flex: 1 },
-        { field: 'min_course_count', headName: 'Minimum Classes', type: 'number', flex: 1 },
-        { field: 'max_course_count', headName: 'Maximum classes', type: 'number', flex: 1 },
+        { field: 'instructor_id', headerName: 'ID', flex: 1 },
+        { field: 'instructor_name_first', headerName: 'Instructor First Name', flex: 1 },
+        { field: 'instructor_name_last', headerName: 'Instructor Last Name', flex: 1 },
+        { field: 'min_course_count', headerName: 'Minimum Classes', type: 'number', flex: 1 },
+        { field: 'max_course_count', headerName: 'Maximum classes', type: 'number', flex: 1 },
     ];
 
     const addInstructor = async () => {
@@ -41,7 +41,7 @@ const InstructorMain = () => {
         await fetch('http://localhost:5000/instructors', {
             method: 'DELETE',
             body: JSON.stringify({
-                "instructor_id": selected.data.instructor_id,
+                "instructor_id": selected.data.instructor_id
 
             }),
             headers: { 'Content-Type': 'application/json' }
@@ -54,6 +54,7 @@ const InstructorMain = () => {
 
         setProfs(response)
     };
+
     useEffect(() => {
         fetchInstructors();
     }, []);

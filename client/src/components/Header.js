@@ -44,7 +44,7 @@ export default () => {
             <AppBar position="static" className="root">
                 <Toolbar>
                    <Typography variant="h6" className={classes.title}>Course Scheduler </Typography>
-                    {body}
+                    {body}ad
                 </Toolbar>
             </AppBar>
         </div>
